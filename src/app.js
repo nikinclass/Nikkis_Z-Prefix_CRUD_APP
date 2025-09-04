@@ -12,8 +12,20 @@ app.get('/', (req,res) => {
   console.log(req.body);
 })
 
-app.get('/User', (req, res) => {
-  knex('User')
+app.get('/user', (req, res) => {
+  knex('user')
+    .select('*')
+    .then(data => {
+      return res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(404).json({error:'The data you are looking for could not be found. Please try again'});
+    });
+});
+
+app.get('/item', (req, res) => {
+  knex('item')
     .select('*')
     .then(data => {
       return res.status(200).json(data);

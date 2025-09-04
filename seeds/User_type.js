@@ -4,10 +4,10 @@
  */
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex('User').del()
-  await knex('User').insert([
-    {id: 1, FirstName: 'Michael', LastName: 'Smith', Username: 'MSmith', Password: '123ABC'},
-    {id: 2, FirstName: 'Casey', LastName: 'Jones', Username: 'CJones', Password: '123ABC'},
-    {id: 3, FirstName: 'Perry', LastName: 'Mason', Username: 'PMason', Password: '123ABC'} 
+  await knex('user').del()
+  await knex('user').insert([
+    {id: 1, firstname: 'Michael', lastname: 'Smith', username: 'MSmith', password: '123ABC'},
+    {id: 2, firstname: 'Casey', lastname: 'Jones', username: 'CJones', password: '123ABC'},
+    {id: 3, firstname: 'Perry', lastname: 'Mason', username: 'PMason', password: '123ABC'} 
   ]);
 };

@@ -4,10 +4,10 @@
  */
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex('Item').del()
-  await knex('Item').insert([
-    {id: 1, UserId: 1, ItemName: 'Laptop', Description: 'Lenovo Laptop', Quantity: 1},
-    {id: 2, UserId: 2, ItemName:  'Monitor', Description:  'LG Monitor', Quantity: 1},
-    {id: 3, UserId: 3, ItemName:  'iPad', Description:  'Apple iPad', Quantity: 1} 
+  await knex('item').del()
+  await knex('item').insert([
+    {item_id: 1, user_id: 1, item_name: 'Laptop', description: 'Lenovo Laptop', quantity: 1},
+    {item_id: 2, user_id: 2, item_name:  'Monitor', description:  'LG Monitor', quantity: 1},
+    {item_id: 3, user_id: 3, item_name:  'iPad', description:  'Apple iPad', quantity: 1} 
   ]);
 };

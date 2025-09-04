@@ -3,12 +3,12 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('Item', table => {
-    table.increments('id').primary;
-    table.integer('UserId');
-    table.string('ItemName');
-    table.string('Description');
-    table.integer('Quantity');
+  return knex.schema.createTable('item', table => {
+    table.increments('item_id').notNullable.primary;
+    table.integer('user_id');
+    table.string('item_name');
+    table.string('description');
+    table.integer('quantity');
   })
   
 };
@@ -18,6 +18,6 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('Item');
+  return knex.schema.dropTableIfExists('item');
   
 };
